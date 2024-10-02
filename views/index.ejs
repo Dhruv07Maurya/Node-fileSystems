@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>EjS PtC</title>
+    <!-- <%=  %> -->
+  </head>
+  <body class="bg-black text-white">
+    <!-- grown up its halirous -->
+    <form class="mt-10 ml-10" action="/create" method="post">
+      <input
+        class="rounded-md text-black p-2"
+        type="text"
+        placeholder="Title"
+        name="title"
+      />
+      <input
+        class="rounded-md text-black p-2"
+        type="text"
+        placeholder="Description"
+        name="details"
+      />
+      <button type="submit" class="bg-blue-500 p-2 rounded-md">
+        Create Task
+      </button>
+    </form>
+
+    <% if (files.length > 0) { %>
+    <ul class="flex flex-wrap">
+      <% files.forEach(function(val) { %>
+      <div class="p-5 border-2 min-w-40 mt-10 ml-10 border-slate-500">
+        <h1 class="text-4xl"><%= val%></h1>
+        <a class="text-blue-500" href="/data/<%=val%>">Read More</a>
+      </div>
+      <% }); %>
+    </ul>
+    <% } else { %>
+    <h1 class="ml-12 mt-5">No task yet</h1>
+    <% } %>
+
+    <script src="/js/index.js"></script>
+  </body>
+</html>
